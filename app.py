@@ -32,96 +32,96 @@ if user_input == " ":
     
 else:
     if target_name == "AChE":
-        feat = pickle.load(open('.\data\Feature_AChE.pkl', 'rb'))
+        feat = pickle.load(open('./data/Feature_AChE.pkl', 'rb'))
         X = df_des[feat]
         option1 = st.selectbox('Select the model', ('Random forest', 'SVC'))
         if option1 == 'Random forest':
-            loaded_model = pickle.load(open('.\data\Final_model_AChE_RF.pkl', 'rb'))
+            loaded_model = pickle.load(open('./data/Final_model_AChE_RF.pkl', 'rb'))
             result = loaded_model.predict(X)
                 
         elif option1 == 'SVC':
-            loaded_model = pickle.load(open('.\data\Final_model_AChE_SVC.pkl', 'rb'))
-            scaler = pickle.load(open('.\data\ss_AChE.pkl', 'rb'))
+            loaded_model = pickle.load(open('./data/Final_model_AChE_SVC.pkl', 'rb'))
+            scaler = pickle.load(open('./data/ss_AChE.pkl', 'rb'))
             Xtest = scaler.transform(X)
             result = loaded_model.predict(Xtest)
 
     elif target_name == "BChE":
-        feat = pickle.load(open('.\data\Feature_BChE.pkl', 'rb'))
+        feat = pickle.load(open('./data/Feature_BChE.pkl', 'rb'))
         X = df_des[feat]
         option1 = st.selectbox('Select the model', ('Random forest',))
         if option1 == 'Random forest':
-            loaded_model = pickle.load(open('.\data\Final_model_BChE_RF.pkl', 'rb'))
+            loaded_model = pickle.load(open('./data/Final_model_BChE_RF.pkl', 'rb'))
             result = loaded_model.predict(X)
                 
     elif target_name == "BACE1":
-        feat = pickle.load(open('.\data\Feature_BACE1.pkl', 'rb'))
+        feat = pickle.load(open('./data/Feature_BACE1.pkl', 'rb'))
         X = df_des[feat]
         option1 = st.selectbox('Select the model', ('Random forest', 'SVC', 'KNN'))
         if option1 == 'Random forest':
-            loaded_model = pickle.load(open('.\data\Final_model_BACE1_RF.pkl', 'rb'))
+            loaded_model = pickle.load(open('./data/Final_model_BACE1_RF.pkl', 'rb'))
             result = loaded_model.predict(X)
                 
         elif option1 == 'SVC':
-            loaded_model = pickle.load(open('.\data\Final_model_BACE1_SVC.pkl', 'rb'))
-            scaler = pickle.load(open('.\data\ss_BACE1.pkl', 'rb'))
+            loaded_model = pickle.load(open('./data/Final_model_BACE1_SVC.pkl', 'rb'))
+            scaler = pickle.load(open('./data/ss_BACE1.pkl', 'rb'))
             Xtest = scaler.transform(X)
             result = loaded_model.predict(Xtest)
             
         elif option1 == 'KNN':
-            loaded_model = pickle.load(open('.\data\Final_model_BACE1_KNN.pkl', 'rb'))
-            scaler = pickle.load(open('.\data\ss_BACE1.pkl', 'rb'))
+            loaded_model = pickle.load(open('./data/Final_model_BACE1_KNN.pkl', 'rb'))
+            scaler = pickle.load(open('./data/ss_BACE1.pkl', 'rb'))
             Xtest = scaler.transform(X)
             result = loaded_model.predict(Xtest)
 
     if target_name == "GSK3B":
-        feat = pickle.load(open('.\data\Feature_GSK3B.pkl', 'rb'))
+        feat = pickle.load(open('./data/Feature_GSK3B.pkl', 'rb'))
         X = df_des[feat]
         option1 = st.selectbox('Select the model', ('Random forest', 'SVC', 'KNN'))
         if option1 == 'Random forest':
-            loaded_model = pickle.load(open('.\data\Final_model_GSK3B_RF.pkl', 'rb'))
+            loaded_model = pickle.load(open('./data/Final_model_GSK3B_RF.pkl', 'rb'))
             result = loaded_model.predict(X)
                 
         elif option1 == 'SVC':
-            loaded_model = pickle.load(open('.\data\Final_model_GSK3B_SVC.pkl', 'rb'))
-            scaler = pickle.load(open('.\data\ss_GSK3B.pkl', 'rb'))
+            loaded_model = pickle.load(open('./data/Final_model_GSK3B_SVC.pkl', 'rb'))
+            scaler = pickle.load(open('./data/ss_GSK3B.pkl', 'rb'))
             Xtest = scaler.transform(X)
             result = loaded_model.predict(Xtest)
             
         elif option1 == 'KNN':
-            loaded_model = pickle.load(open('.\data\Final_model_GSK3B_KNN.pkl', 'rb'))
-            scaler = pickle.load(open('.\data\ss_GSK3B.pkl', 'rb'))
+            loaded_model = pickle.load(open('./data/Final_model_GSK3B_KNN.pkl', 'rb'))
+            scaler = pickle.load(open('./data/ss_GSK3B.pkl', 'rb'))
             Xtest = scaler.transform(X)
             result = loaded_model.predict(Xtest)
 
     elif target_name == "MAOB":
-        feat = pickle.load(open('.\data\Feature_MAOB.pkl', 'rb'))
+        feat = pickle.load(open('./data/Feature_MAOB.pkl', 'rb'))
         X = df_des[feat]
         option1 = st.selectbox('Select the model', ('Random forest',))
         if option1 == 'Random forest':
-            loaded_model = pickle.load(open('.\data\Final_model_MAOB_RF.pkl', 'rb'))
+            loaded_model = pickle.load(open('./data/Final_model_MAOB_RF.pkl', 'rb'))
             result = loaded_model.predict(X)
                 
     elif target_name == "N2B":
-        feat = pickle.load(open('.\data\Feature_N2B.pkl', 'rb'))
+        feat = pickle.load(open('./data/Feature_N2B.pkl', 'rb'))
         X = df_des[feat]
         option1 = st.selectbox('Select the model', ('Random forest', 'Decision tree', 'SVC', 'KNN'))
         if option1 == 'Random forest':
-            loaded_model = pickle.load(open('.\data\Final_model_N2B_RF.pkl', 'rb'))
+            loaded_model = pickle.load(open('./data/Final_model_N2B_RF.pkl', 'rb'))
             result = loaded_model.predict(X)
             
         elif option1 == 'Decision tree':
-            loaded_model = pickle.load(open('.\data\Final_model_N2B_DT.pkl', 'rb'))
+            loaded_model = pickle.load(open('./data/Final_model_N2B_DT.pkl', 'rb'))
             result = loaded_model.predict(X)
                 
         elif option1 == 'SVC':
-            loaded_model = pickle.load(open('.\data\Final_model_N2B_SVC.pkl', 'rb'))
-            scaler = pickle.load(open('.\data\ss_N2B.pkl', 'rb'))
+            loaded_model = pickle.load(open('./data/Final_model_N2B_SVC.pkl', 'rb'))
+            scaler = pickle.load(open('./data/ss_N2B.pkl', 'rb'))
             Xtest = scaler.transform(X)
             result = loaded_model.predict(Xtest)
             
         elif option1 == 'KNN':
-            loaded_model = pickle.load(open('.\data\Final_model_N2B_KNN.pkl', 'rb'))
-            scaler = pickle.load(open('.\data\ss_N2B.pkl', 'rb'))
+            loaded_model = pickle.load(open('./data/Final_model_N2B_KNN.pkl', 'rb'))
+            scaler = pickle.load(open('./data/ss_N2B.pkl', 'rb'))
             Xtest = scaler.transform(X)
             result = loaded_model.predict(Xtest)
      
