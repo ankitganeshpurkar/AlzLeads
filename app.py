@@ -4,27 +4,29 @@ import pandas as pd
 import streamlit as st
 import pickle
 from PIL import Image
-from sklearn.ensemble import RandomForestClassifier
 from rdkit import Chem
 from rdkit.Chem import Descriptors
 from rdkit.ML.Descriptors import MoleculeDescriptors
 
 
 st.write(""" # AlzLeads : A Web Application for Prediction of Inhibitor for Alzheimer's Disease   """)
+result = [2]
 
 user_input = st.text_input("Enter the SMILES string", ' ')
 try:
     mol = Chem.MolFromSmiles(user_input)
+    df_des =  pd.DataFrame()
+    calc = MoleculeDescriptors.MolecularDescriptorCalculator([x[0] for x in Descriptors._descList])
+    header = list(calc.GetDescriptorNames())
+    d2 = list(calc.CalcDescriptors(mol))
+    d = {x:y for x,y in zip(header, d2)}
+    df_des =  df_des.append(d, ignore_index = True)
+    
 except:
-    st.write("Enter the correct smiles string.")
-df_des =  pd.DataFrame()
-calc = MoleculeDescriptors.MolecularDescriptorCalculator([x[0] for x in Descriptors._descList])
-header = list(calc.GetDescriptorNames())
-d2 = list(calc.CalcDescriptors(mol))
-d = {x:y for x,y in zip(header, d2)}
-df_des =  df_des.append(d, ignore_index = True)
+    result = [-1]
+    
 
-result = [-1]
+
 target_name = st.selectbox('Select target', ('AChE', 'BChE', 'BACE1', 'GSK3B', 'MAOB', 'N2B'))
 
 if user_input == " ":
