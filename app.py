@@ -136,4 +136,6 @@ elif result[0] == -1:
     st.write("Enter the correct smiles string.")
     
     
-st.write(""" Key: IC50 <= 5000 nM : Active and IC50 > 5000 nM : Moderately Active  """)
+st.write("""
+
+Key: IC50 <= 5000 nM : Active and IC50 > 5000 nM : Moderately Active  """)
