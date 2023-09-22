@@ -34,7 +34,7 @@ if user_input == " ":
     
 else:
     if target_name == "AChE":
-        feat = pickle.load(open('./data/Feature_AChE.pkl', 'rb'))
+        feat = ['MaxEStateIndex', 'MinEStateIndex', 'MinAbsEStateIndex', 'qed', 'MolWt', 'NumRadicalElectrons', 'MaxPartialCharge', 'MinPartialCharge', 'BCUT2D_MWHI','BCUT2D_CHGHI', 'BCUT2D_CHGLO', 'BCUT2D_LOGPHI', 'BalabanJ', 'HallKierAlpha', 'Ipc', 'PEOE_VSA11', 'PEOE_VSA14', 'PEOE_VSA2', 'PEOE_VSA3', 'PEOE_VSA5', 'PEOE_VSA7', 'SMR_VSA4', 'SlogP_VSA1', 'SlogP_VSA8', 'VSA_EState1']
         X = df_des[feat]
         option1 = st.selectbox('Select the model', ('Random forest', 'SVC'))
         if option1 == 'Random forest':
@@ -48,7 +48,7 @@ else:
             result = loaded_model.predict(Xtest)
 
     elif target_name == "BChE":
-        feat = pickle.load(open('./data/Feature_BChE.pkl', 'rb'))
+        feat = ['MaxEStateIndex', 'MinEStateIndex', 'MinAbsEStateIndex', 'qed', 'MolWt', 'MaxPartialCharge', 'FpDensityMorgan1', 'BCUT2D_MWHI', 'BCUT2D_CHGLO', 'BCUT2D_LOGPHI', 'BCUT2D_LOGPLOW', 'BCUT2D_MRLOW', 'HallKierAlpha', 'PEOE_VSA1', 'PEOE_VSA10', 'PEOE_VSA11', 'PEOE_VSA13', 'PEOE_VSA14', 'PEOE_VSA5', 'PEOE_VSA8', 'SMR_VSA9', 'SlogP_VSA10', 'SlogP_VSA11', 'EState_VSA11', 'EState_VSA6'] 
         X = df_des[feat]
         option1 = st.selectbox('Select the model', ('Random forest',))
         if option1 == 'Random forest':
@@ -56,7 +56,7 @@ else:
             result = loaded_model.predict(X)
                 
     elif target_name == "BACE1":
-        feat = pickle.load(open('./data/Feature_BACE1.pkl', 'rb'))
+        feat = ['MinEStateIndex', 'MinAbsEStateIndex', 'qed', 'NumRadicalElectrons', 'BCUT2D_MWLOW', 'BCUT2D_CHGHI', 'BCUT2D_LOGPHI', 'BCUT2D_LOGPLOW', 'BCUT2D_MRLOW', 'HallKierAlpha', 'PEOE_VSA1', 'PEOE_VSA13', 'PEOE_VSA14', 'PEOE_VSA7', 'SMR_VSA5', 'SMR_VSA6', 'EState_VSA3', 'EState_VSA6', 'VSA_EState2', 'VSA_EState4', 'VSA_EState9', 'NumAliphaticHeterocycles', 'NumAliphaticRings', 'fr_alkyl_halide', 'fr_guanido']
         X = df_des[feat]
         option1 = st.selectbox('Select the model', ('Random forest', 'SVC', 'KNN'))
         if option1 == 'Random forest':
@@ -76,7 +76,7 @@ else:
             result = loaded_model.predict(Xtest)
 
     if target_name == "GSK3B":
-        feat = pickle.load(open('./data/Feature_GSK3B.pkl', 'rb'))
+        feat = ['MinEStateIndex', 'qed', 'MolWt', 'MaxAbsPartialCharge', 'BCUT2D_MWLOW', 'BCUT2D_CHGHI', 'BCUT2D_CHGLO', 'BCUT2D_LOGPHI', 'BCUT2D_LOGPLOW', 'BCUT2D_MRHI', 'BertzCT', 'HallKierAlpha', 'Ipc', 'PEOE_VSA11', 'PEOE_VSA13', 'PEOE_VSA2', 'PEOE_VSA6', 'PEOE_VSA7', 'PEOE_VSA9', 'SlogP_VSA11', 'SlogP_VSA2', 'VSA_EState2', 'VSA_EState3', 'NumSaturatedRings', 'fr_NH1']
         X = df_des[feat]
         option1 = st.selectbox('Select the model', ('Random forest', 'SVC', 'KNN'))
         if option1 == 'Random forest':
@@ -96,7 +96,7 @@ else:
             result = loaded_model.predict(Xtest)
 
     elif target_name == "MAOB":
-        feat = pickle.load(open('./data/Feature_MAOB.pkl', 'rb'))
+        feat = ['MolWt', 'MinPartialCharge', 'FpDensityMorgan1', 'BCUT2D_MWLOW', 'BCUT2D_LOGPHI', 'BCUT2D_LOGPLOW', 'BCUT2D_MRHI', 'PEOE_VSA10', 'PEOE_VSA11', 'PEOE_VSA2', 'PEOE_VSA7', 'SMR_VSA10', 'SMR_VSA7', 'SlogP_VSA3', 'SlogP_VSA4', 'SlogP_VSA5', 'EState_VSA8', 'VSA_EState6', 'FractionCSP3', 'NumAromaticHeterocycles', 'fr_Al_COO', 'fr_COO', 'fr_HOCCN', 'fr_NH1', 'fr_priamide']
         X = df_des[feat]
         option1 = st.selectbox('Select the model', ('Random forest',))
         if option1 == 'Random forest':
@@ -104,7 +104,7 @@ else:
             result = loaded_model.predict(X)
                 
     elif target_name == "N2B":
-        feat = pickle.load(open('./data/Feature_N2B.pkl', 'rb'))
+        feat = ['MaxEStateIndex', 'MinEStateIndex', 'MinAbsEStateIndex', 'qed', 'MolWt', 'MaxPartialCharge', 'MinPartialCharge', 'MaxAbsPartialCharge', 'FpDensityMorgan1', 'BCUT2D_MWHI', 'BCUT2D_CHGHI', 'BCUT2D_CHGLO', 'BCUT2D_LOGPHI', 'BCUT2D_LOGPLOW', 'BCUT2D_MRHI', 'BCUT2D_MRLOW', 'BalabanJ', 'BertzCT', 'HallKierAlpha', 'PEOE_VSA11', 'PEOE_VSA3', 'PEOE_VSA4', 'PEOE_VSA7', 'SMR_VSA1', 'VSA_EState6']
         X = df_des[feat]
         option1 = st.selectbox('Select the model', ('Random forest', 'Decision tree', 'SVC', 'KNN'))
         if option1 == 'Random forest':
@@ -136,6 +136,4 @@ elif result[0] == -1:
     st.write("Enter the correct smiles string.")
     
     
-st.write("""
-
-Key: IC50 <= 5000 nM : Active and IC50 > 5000 nM : Moderately Active  """)
+st.write(""" Key: IC50 <= 5000 nM : Active and IC50 > 5000 nM : Moderately Active  """)
